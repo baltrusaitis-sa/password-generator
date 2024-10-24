@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Generate a random password</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <main>
+
+        <!-- MODE CHANGE -->
+    
+        <label class="mode-switch">
+            <input onclick="changingMode()" type="checkbox" id="modeSwitchBtn">
+            <span class="mode-slider"></span>
+        </label>
+
+        <!-- HERO SECTION -->
+
+        <h1>Generate a <span>random password</span></h1>
+        <p id="supporting-text">Never use an insecure password again.</p>
+        
+        <!-- INCLUDE SPECIAL CHARACTERS -->
+
+        <section id="charset-toggle-section">
+            <label class="charset-switch">
+                <input type="checkbox" id="charsetToggleBtn">
+                <span class="charset-slider"></span>
+            </label>
+            <label class="toggle-label" for="charsetToggleBtn">Include special characters</label>
+        </section>
+        
+        <!-- GENERATE PASSWORD BUTTON AND INPUT SECTION -->
+
+        <section id="input-section">
+            <button onclick="generatePassword()">Generate passwords</button>
+            <input id="length-input" placeholder="Enter password length"></input>
+        </section>
+
+        <!-- SEPARATION LINE (THEMATIC BREAK) FOR ASTETICS -->
+
+        <hr id="separation-line">
+        
+        <!-- PASSWORD OUTPUT SECTION -->
+
+        <section id="output-section">
+            <p id="firstPassword" 
+            class="copy-click"
+            data-tooltip-text="Click To Copy" 
+            data-tooltip-text-copied="✔ Copied"></p>
+            <p id="secondPassword"
+            class="copy-click"
+            data-tooltip-text="Click To Copy" 
+            data-tooltip-text-copied="✔ Copied"></p>
+        </section>
+        
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,279 @@
+body {
+    background-color: #f0faf1;
+}
+
+:root {
+    --duration: 1s;
+    --bounce: ease-in-out;
+  }
+
+/* MAIN AREA */
+
+main {
+    border: solid whitesmoke 5px;
+    box-shadow: 0 0 4px black,
+    inset 0 0 4px black;
+    border-radius: 20px;
+    background-color: #1F2937;
+    color: whitesmoke;
+    font-family: "Inter", sans-serif;
+    margin: 40px auto;
+    padding: 20px 52px 115px 52px;
+    width: 446px;
+}
+
+/* MODE SWITCH */
+
+/* Container for mode switch */
+.mode-switch {
+    position: relative;
+    display: block;
+    margin-left: auto;
+    width: 50px;
+    height: 30px;
+}
+
+/* Slider */
+.mode-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.mode-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #273549;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.mode-slider:before {
+    position: absolute;
+    content: "";
+    height: 24px;
+    width: 24px;
+    left: 3px;
+    bottom: 3px;
+    background-image: var(--Image, url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRy15dic1oL-0Sldem7kCiSUj2mUAuJNQMgdhJk7srULmegyEl5gsSDsVL8u7NDcFRSzGs&usqp=CAU"));
+    background-size: var(--Size, cover);
+    transition: .4s;
+    border-radius: 50%;
+}
+
+.mode-switch input:checked + .mode-slider {
+    background-color: #55F991;
+}
+
+.mode-switch input:checked + .mode-slider:before {
+    transform: translateX(20px);
+}
+
+/* TITLE */
+
+h1 {
+    margin: 65px 0 0 0;
+    width: 360px;
+    font-family: "Karla", sans-serif;
+    font-weight: 800;
+    font-size: 40px;
+}
+
+/* Title green decoration */
+
+span {
+    color: #55F991;
+}
+
+/* SUPPORTING TEXT */
+
+#supporting-text {
+    margin: 10px 0 51px 0;
+    font-weight: 400;
+    font-size: 20px;
+    color: #D5D4D8;
+}
+
+/* CHARACTER BUTTON */
+
+/* Container for swich */
+.charset-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 30px;
+    margin: 0 10px 15px 0px; /* Tarpas tarp jungiklio ir teksto */
+}
+
+/* Slider */
+
+.charset-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.charset-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #273549;
+    transition: .4s;
+    border-radius: 24px;
+}
+
+.charset-slider:before {
+    position: absolute;
+    content: "";
+    height: 24px;
+    width: 24px;
+    left: 3px;
+    bottom: 3px;
+    background-color: whitesmoke;
+    border-radius: 50%;
+    transition: .4s;
+}
+
+input:checked + .charset-slider {
+    background-color: #55F991;
+}
+
+input:checked + .charset-slider:before {
+    transform: translateX(20px);
+}
+
+/* TEXT NEAR SLIDERS */
+
+.toggle-label {
+    position: relative;
+    top: 5px;
+    font-size: 14px;
+    color: #D5D4D8;
+    cursor: pointer;
+}
+
+/* INPUT SECTION */
+
+#input-section {
+    margin: 0 0 30px 0;
+}
+
+/* "Generate password" BUTTON */
+
+button {
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: #10B981;
+    color: whitesmoke;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    width: 191px;
+    height: 42px;
+}
+
+/* Remove button outline when pressed */
+
+button:focus {
+    outline:0;
+}
+
+/* PASSWORD LENGTH INPUT */
+
+input {
+    margin-left: 40px;
+    width: 200px;
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+    text-align: center;
+    background-color: #273549;
+    color: #55F991;
+}
+
+input::placeholder {
+    font-size: 0.9em;
+}
+
+/* SEPARATING LINE */
+
+hr {
+    margin: 0;
+    border: 1px solid #2F3E53;
+}
+
+/* OUTPUT SECTION */
+
+#output-section {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0 0 0;
+}
+
+#output-section p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+    width: 211px;
+    height: 39px;
+    border-radius: 8px;
+    background-color: #273549;
+    color: #55F991;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* COPY ON CLICK TOOLTIP */
+
+.copy-click {
+  position: relative;
+  cursor: pointer;
+}
+.copy-click:after {
+  content: attr(data-tooltip-text);
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  padding: 8px 16px;
+  white-space: nowrap;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 0 0 -12px rgba(0, 0, 0, 0);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity calc(var(--duration) / 1.5) var(--bounce), 
+            -webkit-transform calc(var(--duration) / 1.5) var(--bounce);
+  transition: opacity calc(var(--duration) / 1.5) var(--bounce), 
+            transform calc(var(--duration) / 1.5) var(--bounce);
+  transition: opacity calc(var(--duration) / 1.5) var(--bounce), 
+            transform calc(var(--duration) / 1.5) var(--bounce), 
+            -webkit-transform calc(var(--duration) / 1.5) var(--bounce);
+}
+
+.copy-click.is-hovered:after {
+  opacity: 1;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  transition-timing-function: var(--ease);
+}
+.copy-click.is-copied {
+  background-color: yellow;
+}
+.copy-click.is-copied:after {
+  content: attr(data-tooltip-text-copied);
+}
+
+.header {
+    background: linear-gradient(to right, #ff7e5f, #feb47b); /* A gradient from orange to light orange */
+  }
+
+
+  
